@@ -1,0 +1,42 @@
+
+#Créer un dossier "commandes"
+	mkdir commandes
+
+
+#Créer un fichier "too_long" contenant 100 lignes : "Ligne 1", "Ligne 2", "Ligne 3" ...
+	seq -f "Ligne %g" 1 100 > too_long
+
+
+#Affichier les 5 premières lignes.
+	head -n 5 too_long 
+
+
+#Afficher les 7 dernières lignes.
+	tail -n 7 too_long 
+
+
+#Afficher les 3 lignes avec les nombres les plus élevés mais en utilisant head + sort
+	sort -nr -k2,2 too_long | head -n 3
+
+#Afficher uniquement la ligne "Ligne 42".
+	grep "42" too_long 
+
+
+#Remplacer le ligne "Ligne 42" par "The Ultimate Question of Life, the Universe and Everything"
+	sed -i 's/Ligne 42/The Ultimate Question of Life, the Universe and Everything/' too_long 
+
+
+#Créer un script "script" qui :
+  #I . Lit tous les arguments passés au script.
+  #II . Passe le premier argument à une fonction "check_argv", cette fonction doit retourner 1 si l'argument n'est pas vide et 0 s'il n'y a pas d'arguments.
+  #III . Récupérez la valeur retournée par la fonction et affichez la.
+  
+  	touch script
+  
+#En quelques mots, quelle est la différence entre un if/else et un switch.
+	Un if/else permet d'évaluer des conditions logiques de manières séquentielle.
+	Un switch permet de comparer une valeur/expression avec plusieurs motifs préfédinis.
+
+
+#Dans le fichier "script", ajouter un switch qui check si le 2ieme argument passé au programme est "hello", "toto" ou autre chose.
+

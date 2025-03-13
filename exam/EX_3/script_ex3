@@ -1,0 +1,49 @@
+#Lister les utilisateurs actuellement sur votre machine.
+	cut -d: -f1 /etc/passwd
+
+
+#Créer un nouvel utilisateur "Toto" avec un groupe du même nom."
+	sudo useradd toto
+	sudo groupadd toto
+
+
+#Lister les groupes auquels fait parti ce nouvel utilisateur.
+	groups toto
+
+
+#Créer un groupe "shared" avec votre utilisateur classique + Toto
+	sudo adduser nael shared
+	sudo adduser toto shared
+
+
+#Expliquer brièvement à quoi sert de préfixer une commande par le mot "sudo".
+	Le mot sudo permet d'utiliser les privilèges d'un autre utilisateur lors de l'execution d'une commande. Il permet d'effectuer des tâches administratives ayant besoin de droits élevés sans devoir se connecter à root.
+
+
+#Tous les utilisateurs peuvent ils utiliser ce mot clé ?
+	Non, seul les utilisateurs appartenant au groupe nommé "sudo".
+
+
+#Comment donner à Toto le droit d'utiliser "sudo" pour une commande spécifique telle que "apt install"?
+	sudo visudo
+	On rajoute la ligne:  toto ALL=(ALL) NOPASSWD:/usr/bin/apt install
+
+
+#Comment donner à Toto le droit d'utiliser "sudo" en permanence ?
+	On ajoute toto au groupe sudo
+	sudo usermod -a -G sudo toto
+
+
+#Pourquoi ne pas tout faire avec l'utilisateur root ?
+	Car cela entraine des faille de sécurité, par exemple la modification de fichier système accidentelle, et risque que les programmes malveillants.
+
+
+#Comment faire pour qu'à chaque fois que toto démarre un shell, un message "bienvenue toto" s'affiche ?
+	On modifie le fichier suivant : 
+	sudo gedit /home/toto/.bashrc
+	On écrit :
+	echo "bienvenue toto"
+	On s'assure que le fichier appartienne bien à toto
+	sudo chown toto:toto /home/toto/.bashrc
+
+

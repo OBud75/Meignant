@@ -1,0 +1,42 @@
+#Quelle est la différence entre http et https ?
+	HTTP : protocole non chiffré de transfère de données sur le web.
+	HTTPS : protocole chiffré de transfère de données sur le web.
+
+#Donnez le nom de 2 programmes qui permettent de faire des requetes http.
+	Curl et wget
+
+
+#Par convention, à quoi sont reservés les ports 80, 22 et 443 ?
+	80 : HTTP
+	22 : SSH
+	443 : HTTPS
+
+
+#Comment activer et désactiver le pare feu par défaut ? Comment lister les règles entrantes et sortantes ?
+	Activer le pare feu : sudo ufw enable
+	Désactiver le pare feu : sudo ufw enable
+	Lister les règles : sudo ufw status verbose
+
+
+#A quoi sert le programme Nginx ?
+	Nginx peut servir de serveur WEB, ou de proxy.
+
+
+#A quoi correspondent les initiales MVC ? Quel avantage offre cette architecture d'application ?
+	M : Model
+	V : View
+	C : Controller
+	
+	Cette architecture d'application permet :
+	- de faciliter la réutilisation du modele
+	- de rendre possible un développement parallèle
+	- de faciliter la maintenabilité du code et sa testabilité
+
+
+#A quoi correspondent les initiales CRUD ?
+	C : Create
+	R : Read
+	U : Update
+	D : Delete
+
+

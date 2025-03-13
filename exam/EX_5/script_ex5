@@ -1,0 +1,52 @@
+#Créer un dossier "environ"
+	mkdir environ
+
+
+#Créer un script qui permette à l'utilisateur de choisir la valeur d'une variable d'environnement "ENVIRON" : les choix sont "dev", "prod", et "test".
+#Lorsque l'utilisateur change la variable "ENVIRON", affichez un message de confirmation.
+	touch script
+
+
+#Dans ce dossiez, créer un environnement virtuel python "pythonvenv". Activez le, installez la librairie flask et mettez le résultat de la commande "pip freeze" dans un fichier "requirements.txt".
+
+	python3 -m venv pythonvenv
+	source pythonvenv/bin/activate
+	pip install flask
+	pip freeze > requirements.txt
+
+
+#A quoi sert cette dernière opération ?
+	Cette opération sert à générer un fichier requirements.txt qui contient toutes les dépendances pythons installées dans l'environnement.
+
+
+#Ajouter un fichier .gitignore, ajoutez y "pythonvenv/".
+	touch .gitignore
+	echo "pythonvenv/" >> .gitignore
+
+
+#A quoi sert cette dernère opération ?
+	Elle permet d'empêcher le dossier pythonvenv/ d'être ajouté au Git.
+
+
+#Quels autres fichiers ou dossiers serait il approprié d'ajouter dans le .gitignore ? Pourquoi ?
+	 pycache/ car c'est le fichier de cache Python
+   	 *.pyc car ce sont les fichiers Python compilés
+   	 .env car il contient des variables d'environnement sensibles
+
+
+#A quoi servent les commandes "apt update", "apt upgrade" ?
+	apt update : met à jour la liste des paquets disponible dans les depots
+	apt upgarde : Cette commande met à jour tous les paquets installés qui ont une nouvelle version disponible dans les dépôts.
+
+#Quelles différence entre les commandes "apt autoclean", "apt clean", "apt autoremove" et "apt purge"?
+	apt autoclean : Supprime les fichiers .deb anciens et inutilisés qui ne peuvent plus être téléchargés. 
+	apt clean : Supprime tous les fichiers de cache des paquets téléchargés (/var/cache/apt/archives/)
+	apt autoremove : Supprime les paquets qui ont été installés automatiquement
+	apt purge : Supprime un paquet ainsi que ses fichiers de configuration. 
+
+
+
+
+
+
+

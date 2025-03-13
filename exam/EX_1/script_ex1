@@ -1,0 +1,37 @@
+#Créer un dossier "assets" à la racine du dossier d'exam
+	#aller dans le dossier exam
+	mkdir assets
+	
+
+#Dans ce dossier, créer 10 fichiers "img_1.png", "img_2.png" ...
+	touch img_{1..10}.png
+	
+
+#Dans ce même dossier, créer un fichier "du_texte.txt" contenant "Hello, world".
+	echo "Hello, world">> du_text.txt
+
+
+#Renommer tous les fichiers .png du dossier en "img_1.jpeg", "img_2.jpeg" ...
+	for i in img_*.png; do mv "$i" "${i%.png}.jpeg"; done
+
+
+#Créer un dossier "medias" dans le dossier "assets", déplacez y tous les fichiez .jpeg du dossier "assets".
+	mkdir medias
+	mv *.jpeg medias/
+
+#A quoi servent les formats de fichiers (.png, .txt, .jpeg) ?
+	Ils servent à connaître le type de contenu d'un fichiers mais, ils permettent
+	aussi de savoir comment interpréter ou lire les fichiers. 
+
+
+#Créer un fichier "script" (toujours dans le dossier) qui affiche "Hello world", ajoutez #!/usr/bin/bash
+	touch script
+	
+	#après modification du fichier
+	chmod +x script
+
+#A quoi sert la ligne #!/usr/bin/bash ? Quelles différences avec le lancement du script via "bash script" ?
+	la ligne #!/usr/bin/bash est un shebang et elle indique l'interpréteur qui doit
+	être utilisé (ici bash).
+	La différence avec le lancement via "bash script" est que "bash script" ignore
+	le shebang et utilise l'interpréteur bash.

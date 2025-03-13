@@ -1,0 +1,15 @@
+#Quelle est la commande pour prendre en compte les changements dans la configuration des services ?
+	sudo systemctl daemon-reload
+
+
+#Comment démarrer et stopper un service ?
+	Démarrer un service : sudo systemctl start "nom du service"
+	Stopper un service : sudo systemctl stop "nom du service"
+	
+
+"A quoi sert l'option "restart" ? Quelles différences avec "start" ?
+	Restart sert à faire prendre en compte les différents changement qui ont eu lui lors de la configuration d'un service. Cela revient à faire stop puis start.
+	
+	Start sert à démarrer un service s'il n'est pas déjà actif, sinon il ne se passe rien.
+
+

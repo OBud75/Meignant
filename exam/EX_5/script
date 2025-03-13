@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "Choisissez la valeur de la variable d'environnement ENVIRON :"
+echo "1. dev"
+echo "2. prod"
+echo "3. test"
+read -p "Entrez votre choix (1, 2 ou 3): " choix
+
+
+case $choix in
+    1)
+        export ENVIRON="dev"
+        echo "La variable ENVIRON a était définie sur 'dev'."
+        ;;
+    2)
+        export ENVIRON="prod"
+        echo "La variable ENVIRON a était définie sur 'prod'."
+        ;;
+    3)
+        export ENVIRON="test"
+        echo "La variable ENVIRON a était définie sur 'test'."
+        ;;
+    *)
+        echo "Choix invalide."
+        ;;
+esac

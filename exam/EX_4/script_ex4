@@ -1,0 +1,37 @@
+#Créer un dossier "shared" à la racine du dossier de l'examen.
+	mkdir shared
+
+
+#Mettez "Toto" en tant que propriétaire du dossier "shared".
+	sudo chown toto:toto shared
+
+
+#Dans ce dossier, créer un fichier "owned_by_toto" contenant "echo toto".
+	sudo touch owned_by_toto
+	echo 'echo toto' | sudo -u toto tee -a shared/owned_by_toto > /dev/null
+
+
+#"Toto" doit être également propriétaire du fichier.
+	ls -l owned_by_toto 
+
+
+
+#Rendez ce fichier executable avec bash (#!/usr/bin/bash).
+	echo -e '#!/usr/bin/bash\n echo toto' | sudo -u toto tee owned_by_toto > /dev/null
+
+	sudo -u toto chmod +x owned_by_toto
+
+
+#Donnez à "Toto" le droit d'executer ce script.
+	Toto est déjà le propiétaire donc il a droit d'executer le script.
+
+
+#Que fait le commande "sudo chmod g+x owned_by_toto" ?
+	elle permet aux membre du groupe propriétaire du fichier owned_by_toto de pouvoir l'exécuter.
+
+
+#Que fait la commande "sudo chown root:root owned_by_toto" ?
+	Cette commande change le propriétaire et le groupe propriétaire du fichier owned_by_toto.
+
+
+

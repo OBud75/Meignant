@@ -1,0 +1,44 @@
+#Quels sont les différents niveaux de logs ?
+	DEBUG
+	INFO
+	NOTICE
+	WARNING
+	ERROR
+	CRITICAL
+	ALERT
+	EMERGENCY
+
+
+#Créer un script "logger" qui, quand il est lancé, ajoute dans un fichier "logs" une ligne avec l'utilisateur actuel ainsi que l'heure à laquelle le programme est lancé.
+	touch logger
+	touch logs
+	On donne l'autorisation d'exécuter le script avec : sudo chmod +x logger
+
+#Comment limiter la taille des fichiers de log du journal (journalctl) à 200Mo ?
+	on modifie le fichier journald.conf :
+	sudo gedit /etc/systemd/journald.conf
+	
+	on cherche la ligne SystemMaxUse =
+	et on la remplace par SystemMaxUse = 200M
+
+	On redémarre systemd-journald pour appliquer les changements :
+	sudo systemctl restart systemd-journald
+
+
+#Comment configurer les logs de l'application "nginx" (situés dans /var/log/nginx.log) pour que des rotations soient effectuées tous les mois en conservant les 12 derniers mois de logs, compressant les plus ancients, et en créant un nouveau fichier avec un mod "644 root root"
+	On modifie le fichier avec : sudo gedit /etc/logrotate.d/nginx
+	et on remplace le contenu par :
+	    monthly               # Rotation mensuelle
+	    rotate 12             # Garde les 12 derniers mois de logs
+	    compress              # Compresse les anciens fichiers de logs
+	    create 644 root root  
+	    su root root          # Effectue la rotation en tant qu'utilisateur root
+
+
+#Dans la pratique, pourquoi créer des règles de rotation de log ?
+	On créer des règles de rotations pour :
+	-Eviter la saturation de l'espace de stockage
+	-Améliorer les performance
+	-Simplifier la gestion des logs
+	-Rester dans la conformité et faciliter les audits/analyses
+
