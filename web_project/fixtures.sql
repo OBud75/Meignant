@@ -1,4 +1,0 @@
-CREATE TABLE IF NOT EXISTS user (
-  id INT PRIMARY KEY,
-  name TEXT
-);

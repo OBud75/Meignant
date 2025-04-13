@@ -1,1 +1,0 @@
-echo "Production env activated"
