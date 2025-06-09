@@ -17,7 +17,10 @@
 #Comment limiter la taille des fichiers de log du journal (journalctl) à 200Mo ?
 	on modifie le fichier journald.conf :
 	sudo gedit /etc/systemd/journald.conf
-	
+
+-> Il est possible de simplifier la manipulation du fichier avec "sudo systemctl edit systemd-journald"
+
+
 	on cherche la ligne SystemMaxUse =
 	et on la remplace par SystemMaxUse = 200M
 
@@ -37,8 +40,8 @@
 
 #Dans la pratique, pourquoi créer des règles de rotation de log ?
 	On créer des règles de rotations pour :
-	-Eviter la saturation de l'espace de stockage
+	-Eviter la saturation de l'espace de stockage -> et s'éviter une grosse facture
 	-Améliorer les performance
 	-Simplifier la gestion des logs
-	-Rester dans la conformité et faciliter les audits/analyses
+	-Rester dans la conformité et faciliter les audits/analyses -> Les données peuvent être anonymes etc donc ce n'est pas forcément un point central (mais c'est bien d'y penser)
 
