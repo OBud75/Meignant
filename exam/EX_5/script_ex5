@@ -18,6 +18,7 @@
 #A quoi sert cette dernière opération ?
 	Cette opération sert à générer un fichier requirements.txt qui contient toutes les dépendances pythons installées dans l'environnement.
 
+-> Oui, le but étant de pouvoir recréer l'environnement facilement sur une autre machine.
 
 #Ajouter un fichier .gitignore, ajoutez y "pythonvenv/".
 	touch .gitignore
