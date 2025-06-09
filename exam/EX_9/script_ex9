@@ -32,6 +32,10 @@
 	- de rendre possible un développement parallèle
 	- de faciliter la maintenabilité du code et sa testabilité
 
+-> Oui
+Model correspond à la couche de données
+View correspond à l'interface avec le monde externe
+Controlleur correspond à la couche appelant la logique interne
 
 #A quoi correspondent les initiales CRUD ?
 	C : Create
