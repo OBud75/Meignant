@@ -6,6 +6,7 @@
 #Créer un fichier "too_long" contenant 100 lignes : "Ligne 1", "Ligne 2", "Ligne 3" ...
 	seq -f "Ligne %g" 1 100 > too_long
 
+-> Une autre solution tout aussi viable serait : printf "Ligne %s\n" {1..100} > too_long
 
 #Affichier les 5 premières lignes.
 	head -n 5 too_long 
@@ -36,6 +37,11 @@
 #En quelques mots, quelle est la différence entre un if/else et un switch.
 	Un if/else permet d'évaluer des conditions logiques de manières séquentielle.
 	Un switch permet de comparer une valeur/expression avec plusieurs motifs préfédinis.
+
+-> C'est ca, du coup dans les faits on aura tendance à utiliser un switch quand tous les cas on à peu près autant de chance d'arriver,
+Alors qu'avec un if/else if on vérifie des conditions spécifiques (de la plus probable à la moins probable).
+Niveau algo, sauf optimisation spécifique, if/else if/else sera linéaire O(n)
+Pour un switch pareil cela dépend de l'implémentation du compilateur mais à priori il va générer une jump table et l'algo sera donc en O(1), similiaire à une hash table.
 
 
 #Dans le fichier "script", ajouter un switch qui check si le 2ieme argument passé au programme est "hello", "toto" ou autre chose.
