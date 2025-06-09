@@ -13,3 +13,5 @@
 	Start sert à démarrer un service s'il n'est pas déjà actif, sinon il ne se passe rien.
 
 
+-> A noter que restart de stop pas complètement le process, cela peut avoir une grosse importance, par exemple pour un service
+de gestion de base de données tel que Postgres, stop + start créera une nouvelle connection à la base et pas restart. 
